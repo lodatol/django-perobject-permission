@@ -1,0 +1,12 @@
+============
+Contributors
+============
+
+django-rules Project Lead
+=========================
+
+* Lodato Luciano <lodato.luciano@gmail.com>
+
+Contributors
+===========
+
