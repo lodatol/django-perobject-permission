@@ -22,7 +22,7 @@ Installation
 ============
 
 <pre>
-pip install -e https://github.com/lodatol/django-perobject-permission#egg=django-perobject-permission
+pip install -e git+https://github.com/lodatol/django-perobject-permission#egg=django-perobject-permission
 </pre>
 
 
