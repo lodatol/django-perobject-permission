@@ -28,22 +28,16 @@ pip install -e git+https://github.com/lodatol/django-perobject-permission#egg=dj
 
 Configuration
 ==============
-Add it to the list of INSTALLED_APPS in settings.py:
-<pre>
-INSTALLED_APPS = (
-    ...
-    'django_perobject_permission',
-)
-</pre>
+Nothing (neither INSTALLED_APPS ;-)
 
 
 Rules
 =====
 A rule represents a functional authorization constraint that restricts the actions that a certain user can carry out on a certain object (an instance of a Model).
 
-We need to code only the functional authorization in the model.
+We need to code only the functional authorization in the model that take as input the selected object and the user.
 
-This function take as input the selected object and the user.
+In the next example we see the <b>can_see</b> functional Authorization defined in the model Post.
 
 <pre>
 from django.db import models
@@ -65,9 +59,9 @@ class Post(models.Model):
 Rule Usage
 ==========
 
-We can use the decorator <i>object_permission_required</i>, it take 5 parameters:
-* func: functional authorization constraint defined (eg. Post.can_see)
-* view_param_pk: The view parameter’s name to use for getting the primary key of the model (default: 'pk').
+We can use the decorator <i>object_permission_required</i>; it take 5 parameters:
+* func: functional authorization constraint defined (eg. Post.can_see).
+* view_param_pk: The view parameter’s name to use for getting the primary key of the model (default: 'pk'). Formally it is used for getting the instance on wich apply the function <i>func</i>.
 * login_url: If user isn't authenticated the login url were he can be log in. If none it points to default login url (default: None)
 * raise_exception: If must be raised a PermissionDenied when user isn't authorized (default: False)
 
